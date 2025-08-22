@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+/* Enhanced theme variables with modern color palette */
+:root {
+  --background: #0f0f23;
+  --lavender-light: #e6e6fa;
+  --lavender-default: #b497bd;
+  --lavender-dark: #6a4e77;
+  --lavender-violet: #7b2ff7;
+  --lavender-purple: #5a189a;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+/* Enhanced base styles with better typography and animations */
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: linear-gradient(135deg, #0f0f23 0%, #1a0f2a 50%, #0f0f23 100%);
+    color: var(--lavender-light);
+    font-family: var(--font-sans);
+    min-height: 100vh;
+    margin: 0;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: rgba(139, 92, 246, 0.2);
+  }
+
+  /* Enhanced link and button styles */
+  a {
+    color: var(--lavender-violet);
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--lavender-light);
+    text-shadow: 0 0 8px rgba(139, 92, 246, 0.5);
+  }
+
+  button {
+    background: linear-gradient(135deg, var(--lavender-purple), var(--lavender-violet));
+    color: white;
+    border: none;
+    border-radius: 0.75rem;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(139, 92, 246, 0.2);
+  }
+
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+  }
+
+  /* Custom scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(15, 15, 35, 0.5);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, var(--lavender-purple), var(--lavender-violet));
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, var(--lavender-violet), #a855f7);
+  }
+}
+
+/* Enhanced animations and utilities */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #a855f7, #ec4899, #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .glass-effect {
+    background: rgba(15, 15, 35, 0.3);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+  }
+
+  .glow-effect {
+    box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Enhanced existing animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
