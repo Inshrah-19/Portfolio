@@ -1,10 +1,55 @@
 "use client"
 import { motion } from "framer-motion"
+import { useEffect, useState } from "react"
 
 export default function About() {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({
+        x: (e.clientX / window.innerWidth) * 2 - 1,
+        y: (e.clientY / window.innerHeight) * 2 - 1,
+      })
+    }
+
+    window.addEventListener("mousemove", handleMouseMove)
+    return () => window.removeEventListener("mousemove", handleMouseMove)
+  }, [])
+
   return (
-    <section className="min-h-screen py-20 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section className="min-h-screen py-20 px-4 relative overflow-hidden">
+      <div className="absolute inset-0 pointer-events-none">
+        <motion.div
+          animate={{
+            x: mousePosition.x * 50,
+            y: mousePosition.y * 30,
+            rotate: mousePosition.x * 10,
+          }}
+          transition={{ type: "spring", stiffness: 100, damping: 30 }}
+          className="absolute top-20 right-20 w-32 h-32 bg-gradient-to-br from-purple-500/20 to-pink-500/20 rounded-full blur-xl"
+        />
+        <motion.div
+          animate={{
+            x: mousePosition.x * -30,
+            y: mousePosition.y * 40,
+            rotate: mousePosition.y * -15,
+          }}
+          transition={{ type: "spring", stiffness: 80, damping: 25 }}
+          className="absolute bottom-32 left-16 w-24 h-24 bg-gradient-to-br from-cyan-500/20 to-blue-500/20 rounded-full blur-lg"
+        />
+        <motion.div
+          animate={{
+            x: mousePosition.x * 40,
+            y: mousePosition.y * -20,
+            rotate: mousePosition.x * 20,
+          }}
+          transition={{ type: "spring", stiffness: 120, damping: 35 }}
+          className="absolute top-1/2 right-1/3 w-16 h-16 bg-gradient-to-br from-yellow-500/20 to-orange-500/20 rounded-full blur-md"
+        />
+      </div>
+
+      <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -14,7 +59,9 @@ export default function About() {
           <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-400 via-pink-400 to-purple-600 bg-clip-text text-transparent">
             About Me
           </h1>
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto">Get to know the person behind the code</p>
+          <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+            Crafting digital experiences with passion and precision
+          </p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-start mb-16">
@@ -25,20 +72,20 @@ export default function About() {
             className="space-y-6"
           >
             <div className="space-y-4 text-gray-300 leading-relaxed">
-              <p className="text-lg">
-                Hi! I'm Inshrah, a passionate web developer with 3+ years of experience creating digital experiences
-                that users love. My journey started during college when I built my first website and fell in love with
-                the process of turning ideas into interactive realities.
+              <p className="text-lg text-justify">
+                Hi! I'm Inshrah, a creative web developer who transforms ideas into stunning digital realities. With
+                over 3 years of experience, I've mastered the art of blending functionality with beautiful design to
+                create web experiences that not only look amazing but perform flawlessly.
               </p>
-              <p className="text-lg">
-                I specialize in frontend development with React and modern JavaScript, but I also enjoy working with
-                backend technologies. What drives me is the challenge of solving complex problems while maintaining
-                clean, efficient code that performs beautifully across all devices.
+              <p className="text-lg text-justify">
+                My expertise spans across modern frontend technologies like React, Next.js, and TypeScript, combined
+                with a keen eye for UI/UX design. I believe that great code should be as elegant as the interfaces it
+                powers, which is why I focus on writing clean, maintainable, and scalable solutions.
               </p>
-              <p className="text-lg">
-                When I'm not coding, you'll find me exploring new design trends, contributing to open-source projects,
-                or experimenting with the latest web technologies. I believe in continuous learning and staying updated
-                with the ever-evolving tech landscape.
+              <p className="text-lg text-justify">
+                Beyond coding, I'm passionate about staying at the forefront of web technology trends, contributing to
+                open-source projects, and mentoring fellow developers. Every project is an opportunity to push
+                boundaries and create something extraordinary.
               </p>
             </div>
           </motion.div>
@@ -51,11 +98,82 @@ export default function About() {
           >
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-600/30 to-pink-600/30 rounded-2xl blur-xl"></div>
-              <div className="relative bg-gradient-to-br from-purple-600/10 to-pink-600/10 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-8">
-                <img
-                  src="/professional-developer-portrait.png"
-                  alt="Inshrah - Web Developer"
-                  className="w-full rounded-xl shadow-2xl"
+              <div className="relative bg-gradient-to-br from-slate-900/90 to-slate-800/90 backdrop-blur-sm border border-purple-500/30 rounded-2xl p-8 overflow-hidden">
+                <div className="space-y-4 font-mono text-sm">
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.6 }}
+                    className="text-purple-400"
+                  >
+                    <span className="text-gray-500">const</span> <span className="text-cyan-400">developer</span> ={" "}
+                    {"{"}
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.8 }}
+                    className="pl-4 text-gray-300"
+                  >
+                    name: <span className="text-green-400">"Inshrah"</span>,
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 1.0 }}
+                    className="pl-4 text-gray-300"
+                  >
+                    skills: [<span className="text-yellow-400">"React"</span>,{" "}
+                    <span className="text-yellow-400">"Next.js"</span>,{" "}
+                    <span className="text-yellow-400">"TypeScript"</span>],
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 1.2 }}
+                    className="pl-4 text-gray-300"
+                  >
+                    passion: <span className="text-green-400">"Creating Amazing UX"</span>,
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 1.4 }}
+                    className="pl-4 text-gray-300"
+                  >
+                    coffee: <span className="text-orange-400">true</span>
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 1.6 }}
+                    className="text-purple-400"
+                  >
+                    {"}"}
+                  </motion.div>
+                </div>
+
+                <motion.div
+                  animate={{
+                    rotate: 360,
+                    scale: [1, 1.1, 1],
+                  }}
+                  transition={{
+                    rotate: { duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" },
+                    scale: { duration: 3, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
+                  }}
+                  className="absolute top-4 right-4 w-8 h-8 border-2 border-purple-400/50 rounded-lg"
+                />
+                <motion.div
+                  animate={{
+                    rotate: -360,
+                    y: [0, -10, 0],
+                  }}
+                  transition={{
+                    rotate: { duration: 15, repeat: Number.POSITIVE_INFINITY, ease: "linear" },
+                    y: { duration: 2, repeat: Number.POSITIVE_INFINITY, ease: "easeInOut" },
+                  }}
+                  className="absolute bottom-4 left-4 w-6 h-6 bg-gradient-to-br from-cyan-400/30 to-blue-400/30 rounded-full"
                 />
               </div>
             </div>

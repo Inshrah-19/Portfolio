@@ -18,7 +18,7 @@ export default function Home() {
     { line1: "a Web", line2: "Developer" },
     { line1: "a UX/UI", line2: "Designer" },
     { line1: "a Frontend", line2: "Expert" },
-    { line1: "a Creative", line2: "Coder" },
+    { line1: "a Creative", line2: "Designer" },
   ]
 
   useEffect(() => {
@@ -75,6 +75,19 @@ export default function Home() {
         </CanvasWrapper>
       </div>
 
+      <div className="md:hidden absolute inset-0 overflow-hidden">
+        <div className="absolute top-20 left-4 w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-20 animate-pulse"></div>
+        <div className="absolute top-40 right-8 w-12 h-12 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full opacity-30 animate-bounce"></div>
+        <div
+          className="absolute bottom-40 left-8 w-20 h-20 bg-gradient-to-r from-pink-400 to-purple-600 rounded-full opacity-15 animate-pulse"
+          style={{ animationDelay: "1s" }}
+        ></div>
+        <div
+          className="absolute bottom-60 right-4 w-8 h-8 bg-gradient-to-r from-cyan-400 to-pink-400 rounded-full opacity-25 animate-bounce"
+          style={{ animationDelay: "0.5s" }}
+        ></div>
+      </div>
+
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-5 gap-8 items-center">
         {/* Left Side - Text Content */}
         <motion.div
@@ -88,12 +101,12 @@ export default function Home() {
               Hello, I am
             </div>
             <div className="text-4xl md:text-6xl lg:text-7xl bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-[1.3]">
-              <div className="flex items-start min-h-[1.3em]">
+              <div className="flex items-start justify-center lg:justify-start min-h-[1.3em]">
                 <span>{displayedText1}</span>
                 {currentLine === 1 && <span className="animate-pulse text-cyan-400 ml-1">|</span>}
               </div>
               {roles[currentRole].line2 && (
-                <div className="flex items-start min-h-[1.3em]">
+                <div className="flex items-start justify-center lg:justify-start min-h-[1.3em]">
                   <span>{displayedText2}</span>
                   {currentLine === 2 && <span className="animate-pulse text-cyan-400 ml-1">|</span>}
                 </div>
@@ -129,7 +142,7 @@ export default function Home() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 border-2 border-purple-500 rounded-full text-white font-semibold hover:bg-purple-500/10 transition-all duration-300"
+              className="px-8 py-4 border-2 border-purple-500 rounded-full text-purple-300 font-semibold hover:bg-purple-500/10 transition-all duration-300"
               onClick={() => {
                 const link = document.createElement("a")
                 link.href = "/resume.pdf"
