@@ -4,23 +4,23 @@ import { motion } from "framer-motion"
 
 const projects = [
   {
-    title: "Lavender E-Commerce Website",
+    title: "Hospital Management System",
     description:
-      "A fully responsive e-commerce site built with React, featuring purple gradients and smooth user interactions.",
-    link: "https://github.com/yourusername/lavender-ecommerce",
-    image: "/purple-ecommerce-website.png",
-    tech: ["React", "Tailwind CSS", "Node.js"],
+      "An advanced console based system built with C++, using priority queues having numerous features for beter management.",
+    link: "https://github.com/Inshrah-19/Hospital-Management-System",
+    image: "/HMS.png",
+    tech: ["C++", "File Handling", "Console-based"],
   },
   {
-    title: "Violet Portfolio Template",
+    title: "Portfolio Website",
     description:
-      "A modern responsive portfolio template emphasizing purple hues and animations using Tailwind CSS and Framer Motion.",
-    link: "https://github.com/yourusername/violet-portfolio",
-    image: "/violet-portfolio-website.png",
+      "A modern responsive portfolio template emphasizing designing, creativeness, and animations using REact.js, Tailwind CSS, and Framer Motion.",
+    link: "https://github.com/Inshrah-19/Portfolio",
+    image: "Portfolio.png",
     tech: ["React", "Framer Motion", "Tailwind CSS"],
   },
   {
-    title: "Dark Mode Blog Platform",
+    title: "Pakistan Railways App",
     description:
       "Created a dark mode blog web app with React and Node.js, focusing on accessibility and sleek purple UI design.",
     link: "https://github.com/yourusername/dark-mode-blog",

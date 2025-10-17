@@ -83,9 +83,9 @@ export default function About() {
                 powers, which is why I focus on writing clean, maintainable, and scalable solutions.
               </p>
               <p className="text-lg text-justify">
-                Beyond coding, I'm passionate about staying at the forefront of web technology trends, contributing to
-                open-source projects, and mentoring fellow developers. Every project is an opportunity to push
-                boundaries and create something extraordinary.
+                Beyond coding, I’m passionate about staying at the forefront of web technology trends, continuously learning, 
+                and maintaining consistency in every project I take on. I believe steady improvement and attention to detail 
+                lead to extraordinary results.
               </p>
             </div>
           </motion.div>
@@ -124,8 +124,8 @@ export default function About() {
                     className="pl-4 text-gray-300"
                   >
                     skills: [<span className="text-yellow-400">"React"</span>,{" "}
-                    <span className="text-yellow-400">"Next.js"</span>,{" "}
-                    <span className="text-yellow-400">"TypeScript"</span>],
+                    <span className="text-yellow-400">"Tailwind CSS"</span>,{" "}
+                    <span className="text-yellow-400">"JavaScript"</span>],
                   </motion.div>
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
@@ -141,7 +141,7 @@ export default function About() {
                     transition={{ duration: 0.8, delay: 1.4 }}
                     className="pl-4 text-gray-300"
                   >
-                    coffee: <span className="text-orange-400">true</span>
+                    strong tea: <span className="text-orange-400">true</span>
                   </motion.div>
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}
@@ -185,12 +185,12 @@ export default function About() {
               className="mt-8 grid grid-cols-2 gap-4"
             >
               <div className="bg-purple-600/10 border border-purple-500/20 rounded-lg p-4 text-center">
-                <h4 className="text-2xl font-bold text-purple-400">50+</h4>
+                <h4 className="text-2xl font-bold text-purple-400">10+</h4>
                 <p className="text-gray-300 text-sm">Projects Completed</p>
               </div>
               <div className="bg-pink-600/10 border border-pink-500/20 rounded-lg p-4 text-center">
-                <h4 className="text-2xl font-bold text-pink-400">3+</h4>
-                <p className="text-gray-300 text-sm">Years Experience</p>
+                <h4 className="text-2xl font-bold text-pink-400">2+</h4>
+                <p className="text-gray-300 text-sm">Years of Coding</p>
               </div>
             </motion.div>
           </motion.div>
@@ -216,8 +216,8 @@ export default function About() {
             </div>
             <div className="bg-slate-800/50 border border-purple-500/20 rounded-lg p-6">
               <div className="text-3xl mb-3">🌟</div>
-              <h4 className="text-lg font-semibold text-purple-400 mb-2">Open Source</h4>
-              <p className="text-gray-400 text-sm">Contributing to the developer community</p>
+              <h4 className="text-lg font-semibold text-purple-400 mb-2">Consistency</h4>
+              <p className="text-gray-400 text-sm">Staying focused on improvement and attention to detail in every project</p>
             </div>
           </div>
         </motion.div>

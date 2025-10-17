@@ -145,7 +145,7 @@ export default function Home() {
               className="px-8 py-4 border-2 border-purple-500 rounded-full text-purple-300 font-semibold hover:bg-purple-500/10 transition-all duration-300"
               onClick={() => {
                 const link = document.createElement("a")
-                link.href = "/resume.pdf"
+                link.href = "/Resume_Inshrah.pdf"
                 link.download = "Inshrah_Resume.pdf"
                 document.body.appendChild(link)
                 link.click()
