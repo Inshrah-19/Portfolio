@@ -133,7 +133,7 @@ export default function About() {
                     transition={{ duration: 0.8, delay: 1.2 }}
                     className="pl-4 text-gray-300"
                   >
-                    passion: <span className="text-green-400">"Creating Amazing UX"</span>,
+                    passion: <span className="text-green-400">"Creating Amazing Websites"</span>,
                   </motion.div>
                   <motion.div
                     initial={{ opacity: 0, x: -20 }}

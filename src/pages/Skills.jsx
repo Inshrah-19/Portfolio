@@ -6,31 +6,37 @@ const skillCategories = [
   {
     title: "Frontend Development",
     skills: [
-      { name: "React", level: 95 },
-      { name: "JavaScript", level: 90 },
+      { name: "React", level: 80 },
+      { name: "JavaScript", level: 80 },
+      { name: "TypeScript", level: 80 },
+      {name: "API Integration", level: 75 },
       { name: "Tailwind CSS", level: 88 },
-      { name: "HTML & CSS", level: 100 },
-      { name: "Framer Motion", level: 85 },
+      { name: "Responsive Design", level: 90 },
+      { name: "HTML5 & CSS3", level: 95 },
     ],
   },
   {
     title: "Backend Development",
     skills: [
-      { name: "Node.js", level: 70 },
-      { name: "Express.js", level: 10 },
-      { name: "MongoDB", level: 15 },
+      { name: "Node.js", level: 60 },
+      { name: "RESTful APIs", level: 75 },
+      { name: "C++", level: 80 },
       { name: "MySQL", level: 85 },
-      { name: "Java", level: 85 },
+      { name: "Java", level: 70 },
+      { name: "MongoDB", level: 25 },
+      { name: "Express.js", level: 10 },
     ],
   },
   {
     title: "Tools & Technologies",
     skills: [
-      { name: "Git", level: 90 },
-      { name: "Github", level: 80 },
-      { name: "Canva", level: 100 },
-      { name: "Figma", level: 100 },
-      { name: "VS Code", level: 100 },
+      { name: "Git/Github", level: 90 },     
+      { name: "Canva", level: 95 },
+      { name: "Figma", level: 90 },
+      { name: "VS Code", level: 95 },
+      { name: "Vercel", level: 85 },
+      { name: "Framer Motion", level: 80 },
+      { name: "Trello & Notion", level: 80 },
     ],
   },
 ]
@@ -50,7 +56,7 @@ export default function Skills() {
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             A comprehensive overview of my technical expertise and proficiency levels across various technologies and
-            tools.
+            tools to build production-ready websites.
           </p>
         </motion.div>
 

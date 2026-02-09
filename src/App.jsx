@@ -8,7 +8,7 @@ import Home from "./pages/Home.jsx"
 import About from "./pages/About.jsx"
 import Projects from "./pages/Projects.jsx"
 import Skills from "./pages/Skills.jsx"
-import Testimonials from "./pages/Testimonials.jsx" // Replaced Blog with Testimonials
+import Certifications from "./pages/Certifications.jsx" 
 import Contact from "./pages/Contact.jsx"
 
 function AnimatedRoutes() {
@@ -21,7 +21,7 @@ function AnimatedRoutes() {
           { path: "/about", Component: About },
           { path: "/projects", Component: Projects },
           { path: "/skills", Component: Skills },
-          { path: "/testimonials", Component: Testimonials }, // Updated route
+          { path: "/certifications", Component: Certifications }, // Updated route
           { path: "/contact", Component: Contact },
         ].map(({ path, Component }) => (
           <Route

@@ -120,8 +120,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg md:text-xl mb-8 text-gray-300 leading-relaxed"
           >
-            Crafting unique web experiences with passion for design and development. Explore my projects, skills, and
-            testimonials, and let's create magic together.
+            Crafting unique web experiences with passion for design and development. Explore my projects and skills, and let's create magic together.
           </motion.p>
 
           <motion.div
@@ -142,10 +141,10 @@ export default function Home() {
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 border-2 border-purple-500 rounded-full text-purple-300 font-semibold hover:bg-purple-500/10 transition-all duration-300"
+              className="px-8 py-4 border-2 border-purple-500 rounded-full text-purple-100 font-semibold hover:bg-purple-500/10 transition-all duration-300"
               onClick={() => {
                 const link = document.createElement("a")
-                link.href = "/Resume_Inshrah.pdf"
+                link.href = "/Resume.pdf"
                 link.download = "Inshrah_Resume.pdf"
                 document.body.appendChild(link)
                 link.click()

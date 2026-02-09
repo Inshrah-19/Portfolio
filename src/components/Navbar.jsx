@@ -9,7 +9,7 @@ const links = [
   { to: "/about", label: "About" },
   { to: "/projects", label: "Projects" },
   { to: "/skills", label: "Skills" },
-  { to: "/testimonials", label: "Testimonials" }, // Updated from Blog to Testimonials
+  { to: "/certifications", label: "Certifications" },   
   { to: "/contact", label: "Contact" },
 ]
 
@@ -25,7 +25,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
             className="text-2xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent"
           >
-            Portfolio
+            Inshrah
           </motion.div>
 
           {/* Desktop Navigation */}
