@@ -15,10 +15,10 @@ export default function Contact() {
 
     emailjs
       .sendForm(
-        "service_p2ig9t7",     // 🔁 replace
-        "template_cgjxg0o",    // 🔁 replace
+        "service_p2ig9t7", // 🔁 replace
+        "template_cgjxg0o", // 🔁 replace
         e.target,
-        "FBDmla-hCmGC6SqXE"      // 🔁 replace
+        "FBDmla-hCmGC6SqXE", // 🔁 replace
       )
       .then(
         () => {
@@ -30,7 +30,7 @@ export default function Contact() {
           console.error(error);
           alert("Something went wrong. Please try again.");
           setLoading(false);
-        }
+        },
       );
   };
 
@@ -80,7 +80,7 @@ export default function Contact() {
                   </label>
                   <input
                     type="text"
-                    name="from_name"   // 🔥 EmailJS key
+                    name="from_name" // 🔥 EmailJS key
                     required
                     placeholder="Your full name"
                     className="w-full bg-slate-800/50 border border-purple-500/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-400"
@@ -93,7 +93,7 @@ export default function Contact() {
                   </label>
                   <input
                     type="email"
-                    name="from_email"  // 🔥 EmailJS key
+                    name="from_email" // 🔥 EmailJS key
                     required
                     placeholder="your.email@example.com"
                     className="w-full bg-slate-800/50 border border-purple-500/30 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-purple-400"
@@ -105,7 +105,7 @@ export default function Contact() {
                     Message
                   </label>
                   <textarea
-                    name="message"     // 🔥 EmailJS key
+                    name="message" // 🔥 EmailJS key
                     required
                     rows={6}
                     placeholder="Tell me about your project..."
@@ -114,21 +114,19 @@ export default function Contact() {
                 </div>
 
                 <motion.button
-  type="submit"
-  disabled={loading}
-  whileHover={{ scale: 1.02 }}
-  whileTap={{ scale: 0.98 }}
-  className={`w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-4 rounded-xl ${
-    loading ? "opacity-60 cursor-not-allowed" : ""
-  }`}
->
-  {loading ? "Sending..." : "Send Message"}
-</motion.button>
-
+                  type="submit"
+                  disabled={loading}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                  className={`w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white font-bold py-4 rounded-xl ${
+                    loading ? "opacity-60 cursor-not-allowed" : ""
+                  }`}
+                >
+                  {loading ? "Sending..." : "Send Message"}
+                </motion.button>
               </form>
             )}
           </motion.div>
-
 
           {/* Contact Info */}
           <motion.div
@@ -217,13 +215,13 @@ export default function Contact() {
                 {/* Social Profiles */}
                 <div className="pt-6 border-t border-purple-500/20">
                   <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-                Social Profiles
-              </h3>
+                    Social Profiles
+                  </h3>
 
                   <div className="flex gap-4">
                     {/* GitHub */}
                     <motion.a
-                      href= "https://github.com/Inshrah-19"
+                      href="https://github.com/Inshrah-19"
                       target="_blank"
                       rel="noopener noreferrer"
                       whileHover={{ scale: 1.15, y: -2 }}

@@ -133,7 +133,7 @@ export default function Home() {
               whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(139, 92, 246, 0.4)" }}
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-semibold shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
-              onClick={() => (window.location.href = "/contact")}
+              onClick={() => (window.location.href = "/Contact")}
             >
               Contact Me
             </motion.button>
