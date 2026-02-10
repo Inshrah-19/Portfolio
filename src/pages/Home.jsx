@@ -1,71 +1,88 @@
-"use client"
-import { motion } from "framer-motion"
-import { useState, useEffect } from "react"
-import Hero3D from "../components/Hero3D"
-import CanvasWrapper from "../components/CanvasWrapper"
-import Interactive3DModel from "../components/Interactive3DModel"
+"use client";
+import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import Hero3D from "../components/Hero3D";
+import CanvasWrapper from "../components/CanvasWrapper";
+import Interactive3DModel from "../components/Interactive3DModel";
 
 export default function Home() {
-  const [currentRole, setCurrentRole] = useState(0)
-  const [displayedText1, setDisplayedText1] = useState("")
-  const [displayedText2, setDisplayedText2] = useState("")
-  const [isTyping, setIsTyping] = useState(true)
-  const [isDeleting, setIsDeleting] = useState(false)
-  const [currentLine, setCurrentLine] = useState(1)
+  const [currentRole, setCurrentRole] = useState(0);
+  const [displayedText1, setDisplayedText1] = useState("");
+  const [displayedText2, setDisplayedText2] = useState("");
+  const [isTyping, setIsTyping] = useState(true);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [currentLine, setCurrentLine] = useState(1);
 
+  const navigate = useNavigate();
   const roles = [
     { line1: "Inshrah", line2: "" },
     { line1: "a Web", line2: "Developer" },
-    { line1: "a UX/UI", line2: "Designer" },
+    { line1: "a UI/UX", line2: "Designer" },
     { line1: "a Frontend", line2: "Expert" },
     { line1: "a Creative", line2: "Designer" },
-  ]
+  ];
 
   useEffect(() => {
-    const currentText1 = roles[currentRole].line1
-    const currentText2 = roles[currentRole].line2
-    const typingSpeed = isDeleting ? 50 : 100
-    const pauseTime = isDeleting ? 500 : 2000
+    const currentText1 = roles[currentRole].line1;
+    const currentText2 = roles[currentRole].line2;
+    const typingSpeed = isDeleting ? 50 : 100;
+    const pauseTime = isDeleting ? 500 : 2000;
 
     const timeout = setTimeout(() => {
       if (!isDeleting && currentLine === 1) {
         // Typing first line
         if (displayedText1 === currentText1) {
           if (currentText2) {
-            setCurrentLine(2)
+            setCurrentLine(2);
           } else {
             // No second line, pause then start deleting
-            setTimeout(() => setIsDeleting(true), pauseTime)
+            setTimeout(() => setIsDeleting(true), pauseTime);
           }
         } else {
-          setDisplayedText1(currentText1.substring(0, displayedText1.length + 1))
+          setDisplayedText1(
+            currentText1.substring(0, displayedText1.length + 1),
+          );
         }
       } else if (!isDeleting && currentLine === 2) {
         // Typing second line
         if (displayedText2 === currentText2) {
           // Finished typing both lines, pause then start deleting
-          setTimeout(() => setIsDeleting(true), pauseTime)
+          setTimeout(() => setIsDeleting(true), pauseTime);
         } else {
-          setDisplayedText2(currentText2.substring(0, displayedText2.length + 1))
+          setDisplayedText2(
+            currentText2.substring(0, displayedText2.length + 1),
+          );
         }
       } else if (isDeleting) {
         // Deleting
         if (currentLine === 2 && displayedText2.length > 0) {
-          setDisplayedText2(currentText2.substring(0, displayedText2.length - 1))
+          setDisplayedText2(
+            currentText2.substring(0, displayedText2.length - 1),
+          );
         } else if (displayedText1.length > 0) {
-          if (currentLine === 2) setCurrentLine(1)
-          setDisplayedText1(currentText1.substring(0, displayedText1.length - 1))
+          if (currentLine === 2) setCurrentLine(1);
+          setDisplayedText1(
+            currentText1.substring(0, displayedText1.length - 1),
+          );
         } else {
           // Finished deleting, move to next role
-          setIsDeleting(false)
-          setCurrentLine(1)
-          setCurrentRole((prev) => (prev + 1) % roles.length)
+          setIsDeleting(false);
+          setCurrentLine(1);
+          setCurrentRole((prev) => (prev + 1) % roles.length);
         }
       }
-    }, typingSpeed)
+    }, typingSpeed);
 
-    return () => clearTimeout(timeout)
-  }, [displayedText1, displayedText2, isDeleting, currentRole, currentLine, roles])
+    return () => clearTimeout(timeout);
+  }, [
+    displayedText1,
+    displayedText2,
+    isDeleting,
+    currentRole,
+    currentLine,
+    roles,
+  ]);
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -103,12 +120,16 @@ export default function Home() {
             <div className="text-4xl md:text-6xl lg:text-7xl bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent leading-[1.3]">
               <div className="flex items-start justify-center lg:justify-start min-h-[1.3em]">
                 <span>{displayedText1}</span>
-                {currentLine === 1 && <span className="animate-pulse text-cyan-400 ml-1">|</span>}
+                {currentLine === 1 && (
+                  <span className="animate-pulse text-cyan-400 ml-1">|</span>
+                )}
               </div>
               {roles[currentRole].line2 && (
                 <div className="flex items-start justify-center lg:justify-start min-h-[1.3em]">
                   <span>{displayedText2}</span>
-                  {currentLine === 2 && <span className="animate-pulse text-cyan-400 ml-1">|</span>}
+                  {currentLine === 2 && (
+                    <span className="animate-pulse text-cyan-400 ml-1">|</span>
+                  )}
                 </div>
               )}
             </div>
@@ -120,7 +141,9 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg md:text-xl mb-8 text-gray-300 leading-relaxed"
           >
-            Crafting unique web experiences with passion for design and development. Explore my projects and skills, and let's create magic together.
+            Crafting unique web experiences with passion for design and
+            development. Explore my projects and skills, and let's create magic
+            together.
           </motion.p>
 
           <motion.div
@@ -130,10 +153,13 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
           >
             <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 10px 30px rgba(139, 92, 246, 0.4)" }}
+              whileHover={{
+                scale: 1.05,
+                boxShadow: "0 10px 30px rgba(139, 92, 246, 0.4)",
+              }}
               whileTap={{ scale: 0.95 }}
-              className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-semibold shadow-lg hover:shadow-purple-500/25 transition-all duration-300"
-              onClick={() => (window.location.href = "/Contact")}
+              className="px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full text-white font-semibold"
+              onClick={() => navigate("/contact")}
             >
               Contact Me
             </motion.button>
@@ -143,12 +169,12 @@ export default function Home() {
               whileTap={{ scale: 0.95 }}
               className="px-8 py-4 border-2 border-purple-500 rounded-full text-purple-100 font-semibold hover:bg-purple-500/10 transition-all duration-300"
               onClick={() => {
-                const link = document.createElement("a")
-                link.href = "/Resume.pdf"
-                link.download = "Inshrah_Resume.pdf"
-                document.body.appendChild(link)
-                link.click()
-                document.body.removeChild(link)
+                const link = document.createElement("a");
+                link.href = "/Resume.pdf";
+                link.download = "Inshrah_Resume.pdf";
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
               }}
             >
               Download Resume
@@ -170,5 +196,5 @@ export default function Home() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
